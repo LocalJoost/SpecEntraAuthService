@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/d2bb9156-d5f2-4417-ac3e-086c2c40883a>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 14f89adf-e380-4ea8-9173-7f9aa26743dc
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 14f89adf-e380-4ea8-9173-7f9aa26743dc
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7f7f4a44-676a-49a7-bdf0-378dd3b176cd
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7f7f4a44-676a-49a7-bdf0-378dd3b176cd>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 88663275-e60e-4661-848c-c3cd543c40a0
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    closeButton: false
+    displayText: false
+    displayWindow: false
+    errorAudioSource: false
+    errorIcon: false
+    infoIcon: false
+    uiSoundAudioSource: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - closeButton: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      displayText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      displayWindow: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      errorIcon: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      infoIcon: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      errorAudioSource: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      uiSoundAudioSource: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AssignableType closeButton
+    - // @input Component.Text displayText
+    - // @input SceneObject displayWindow
+    - // @input SceneObject errorIcon
+    - // @input SceneObject infoIcon
+    - // @input Component.AudioComponent errorAudioSource
+    - // @input Component.AudioComponent uiSoundAudioSource

@@ -1,0 +1,47 @@
+- !<AssetImportMetadata/7a747715-06c7-47e4-8ed2-69c32ce27272>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> d7d401ec-0adb-48d6-9d50-7afc0a054122
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> d7d401ec-0adb-48d6-9d50-7afc0a054122
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 12ecca0c-a74f-40b7-b184-add50a9e3097
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/12ecca0c-a74f-40b7-b184-add50a9e3097>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d219e4fc-751b-4e40-8376-62d213637b57
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    clientId: false
+    tenantId: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - tenantId: ""
+      clientId: ""
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input string tenantId
+    - // @input string clientId
