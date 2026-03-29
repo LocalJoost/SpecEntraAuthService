@@ -29,6 +29,7 @@
     button: false
     displayFrame: false
     displayText: false
+    pincodeInput: false
     testApiUrl: false
   ScriptTypesHidden:
     {}
@@ -43,6 +44,7 @@
       displayText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       testApiUrl: ""
       button: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      pincodeInput: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -51,3 +53,4 @@
     - // @input Component.Text displayText
     - // @input string testApiUrl
     - // @input AssignableType button
+    - // @input AssignableType_1 pincodeInput

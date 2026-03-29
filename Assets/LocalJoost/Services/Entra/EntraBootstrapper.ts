@@ -1,7 +1,7 @@
 import { ServiceManager } from "LocalJoost/Services/ServiceManager";
 import { EntraDeviceCodeFlowAuthenticationService } from "./EntraDeviceCodeFlowAuthenticationService";
 import { IEntraDeviceCodeFlowAuthenticationService } from "./IEntraDeviceCodeFlowAuthenticationService";
-import { PersistentStorageTokenStore } from "./PersisentStorageTokenStore";
+import { EncryptedPersistentStorageTokenStore } from "./EncryptedPersistentStorageTokenStore";
 
 @component
 export class EntraBootstrapper extends BaseScriptComponent {
@@ -11,7 +11,7 @@ export class EntraBootstrapper extends BaseScriptComponent {
     onAwake() {
         var serviceManager = ServiceManager.getInstance();
         var entraService = new EntraDeviceCodeFlowAuthenticationService(
-            this.tenantId, this.clientId, new PersistentStorageTokenStore(), true);
+            this.tenantId, this.clientId, new EncryptedPersistentStorageTokenStore(), true);
         serviceManager.register(IEntraDeviceCodeFlowAuthenticationService, entraService);
     }
 }

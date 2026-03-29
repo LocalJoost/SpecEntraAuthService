@@ -33,7 +33,16 @@ export class EntraDeviceCodeFlowAuthenticationService implements IEntraDeviceCod
     }
 
     public async authenticate(): Promise<AccessToken> {
-        let currentToken = this.tokenStore.getToken();
+        var currentToken: AccessToken | null = null;
+        try{
+            currentToken = await this.tokenStore.getToken();
+        } catch (error) {
+            var errorMessage = error instanceof Error ? error.message : String(error);
+            this.trace(errorMessage);
+            this.UserActionRequiredEvent.invoke(errorMessage);
+            await this.awaitableSleep.sleep(3);
+        }
+
         if (currentToken) {
             this.trace("Existing token found, checking expiration");
             if (!currentToken.isExpired) {
@@ -43,17 +52,16 @@ export class EntraDeviceCodeFlowAuthenticationService implements IEntraDeviceCod
             else {
                 currentToken = await this.refreshToken(currentToken.refreshToken);
                 if (currentToken) {
-                    this.tokenStore.setToken(currentToken);
+                    await this.tokenStore.setToken(currentToken);
                     return currentToken;
                 }
             }
         }
         this.trace("No valid token available, starting new device code flow authentication");
         const deviceCodeResponse = await this.requestDeviceCode();
-        this.trace(`User code: ${deviceCodeResponse.user_code}`);
         this.UserActionRequiredEvent.invoke(`Please go to ${deviceCodeResponse.verification_uri} and enter code: ${deviceCodeResponse.user_code}`);
         currentToken = await this.pollForToken(deviceCodeResponse.device_code);
-        this.tokenStore.setToken(currentToken);
+        await this.tokenStore.setToken(currentToken);
         return currentToken;
     }
 
